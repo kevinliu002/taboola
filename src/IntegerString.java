@@ -50,7 +50,7 @@ public class IntegerString {
 
 
     public static void main(String[] args) {
-        System.out.println(stringToInt("1239"));
+        System.out.println(stringToInt("-1239"));
 
     }
 
