@@ -12,7 +12,7 @@ public class IntegerString {
          *  Complexity Analysis: O(n) time, O(1) space.
          */
 
-        //Intiaize variables to hold index, isNegative flag, and result.
+        //Initialize variables to hold index, isNegative flag, and result.
         int index = 0;
         int result = 0;
         boolean isNegative = false;
@@ -48,7 +48,7 @@ public class IntegerString {
         return result;
     }
 
-    //Main function.
+
     public static void main(String[] args) {
         System.out.println(stringToInt("1239"));
 
