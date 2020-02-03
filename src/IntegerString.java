@@ -12,10 +12,10 @@ public class IntegerString {
          *  Complexity Analysis: O(n) time, O(1) space.
          */
 
-        //Intiaize variables to hold length of string, index, and result.
-        int stringLength = string.length();
+        //Intiaize variables to hold index, isNegative flag, and result.
         int index = 0;
         int result = 0;
+        boolean isNegative = false;
 
 
         // Create a hashmap to store 0 to 9, mapping char to int.
@@ -24,21 +24,22 @@ public class IntegerString {
         for (int i = 0; i < 10; i++) {
             integerLookup.put(integers.charAt(i), i);
         }
-
-        // Loop through string and add to result. Note that charAt is equivalent to array access.
-        while (index < stringLength) {
-            result = (result * 10) + integerLookup.get(string.charAt(index));
-            index++;
-
-        }
-
         //Special Case: If string contains negative symbol.
         if (string.charAt(0) == '-') {
-            result = -1 * result;
+            isNegative = true;
+            index = 1;
+        }
+
+        // Loop through string and add to result. Note that charAt is equivalent to array access.
+        while (index < string.length()) {
+            result = (result * 10) + integerLookup.get(string.charAt(index));
+            index++;
+        }
+        if (isNegative == true) {
+            result = result * -1;
         }
         return result;
     }
-
 
     //Main function.
     public static void main(String[] args) {

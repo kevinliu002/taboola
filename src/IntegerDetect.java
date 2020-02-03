@@ -10,24 +10,21 @@ public class IntegerDetect {
          *  Complexity Analysis: O(N) time, O(1) space
          */
 
-        //Intialize variables to flag is integer is seen, index, and string length.
+        //Intialize variables to flag is integer is seen
         boolean isInteger = false;
-        int index = 0;
-        int StringLength = string.length();
 
         //Loop through string and see if integer is present. Note 40 and 57
         //refer to ASCII values of integers 0 to 9.
-        while (index < StringLength) {
-            if (string.charAt(index) >= 40 && string.charAt(index) <= 57) {
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) >= 40 && string.charAt(i) <= 57) {
                 isInteger = true;
             }
-            index++;
         }
         return isInteger;
     }
 
     public static void main(String args[]) {
-        System.out.println(ContainsInteger("-0ABCk"));
+        System.out.println(ContainsInteger("js654idlkhf"));
 
     }
 }
