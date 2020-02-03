@@ -4,12 +4,13 @@ CREATE TABLE PRODUCTS(Name varchar(255), Category varchar(255),
 PRIMARY KEY (Name));
 
 
-/* Create a tabe called Price History that has column name, price, and start/end date */
+/* Create a table called Price History that has column name, price, and start/end date */
 CREATE TABLE PRICEHISTORY AS
 SELECT Name
 FROM PRODUCTS;
 
-/* SQLLite doesn't support multiple adds, so using ALTER/ADD in sucession*/
+/* SQLLite doesn't support multiple adds, so using ALTER/ADD in sucession.
+ Note: Alternative method would be using a foreign key */
 ALTER TABLE PRICEHISTORY
 ADD COLUMN Price VARCHAR(255);
 ALTER TABLE PRICEHISTORY

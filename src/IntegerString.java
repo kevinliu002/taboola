@@ -24,6 +24,7 @@ public class IntegerString {
         for (int i = 0; i < 10; i++) {
             integerLookup.put(integers.charAt(i), i);
         }
+
         //Special Case: If string contains negative symbol.
         if (string.charAt(0) == '-') {
             isNegative = true;
@@ -32,10 +33,16 @@ public class IntegerString {
 
         // Loop through string and add to result. Note that charAt is equivalent to array access.
         while (index < string.length()) {
-            result = (result * 10) + integerLookup.get(string.charAt(index));
+            try {
+                result = (result * 10) + integerLookup.get(string.charAt(index));
+            } catch (Exception e) {
+                System.out.println("Input contains a character other than 0-9. "
+                        + "Cannot be converted to integer");
+                throw e;
+            }
             index++;
         }
-        if (isNegative == true) {
+        if (isNegative) {
             result = result * -1;
         }
         return result;
@@ -43,7 +50,7 @@ public class IntegerString {
 
     //Main function.
     public static void main(String[] args) {
-        System.out.println(stringToInt("-1239"));
+        System.out.println(stringToInt("1239"));
 
     }
 

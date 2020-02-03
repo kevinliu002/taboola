@@ -1,6 +1,6 @@
 public class IntegerDetect {
 
-    public static boolean ContainsInteger(String string) {
+    public static boolean containsInteger(String string) {
         /** Question 2: This function takes in a string and
          *  determines if an integer is present.
          *
@@ -10,7 +10,7 @@ public class IntegerDetect {
          *  Complexity Analysis: O(N) time, O(1) space
          */
 
-        //Intialize variables to flag is integer is seen
+        //Initialize variables to flag is integer is seen
         boolean isInteger = false;
 
         //Loop through string and see if integer is present. Note 40 and 57
@@ -23,8 +23,7 @@ public class IntegerDetect {
         return isInteger;
     }
 
-    public static void main(String args[]) {
-        System.out.println(ContainsInteger("js654idlkhf"));
-
+    public static void main(String[] args) {
+        System.out.println(containsInteger("12345"));
     }
 }
